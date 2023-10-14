@@ -1,0 +1,15 @@
+# Astro
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+
+# Env vars
+.env
+
+# MacOS
+.DS_Store
