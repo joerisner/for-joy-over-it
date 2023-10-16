@@ -1,6 +1,6 @@
 {
-  "name": "highlights",
-  "description": "A collection of highlights from books I've read",
+  "name": "for-joy-over-it",
+  "description": "My personal blog site",
   "type": "module",
   "version": "1.0.0",
   "scripts": {

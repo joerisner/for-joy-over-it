@@ -1,6 +1,16 @@
 :root {
-  --color-bg-main: rgb(18, 18, 18);
-  --color-txt-default: rgb(241, 245, 249);
+  --color-bg-main: rgb(27, 39, 51);
+  --color-txt-default: rgb(236, 233, 230);
+  --color-txt-muted: rgba(236, 233, 230, 0.66);
+  --font-size-small: 0.95rem;
+  --font-size-default: 1.125rem;
+  --font-size-large: 1.25rem;
+  --font-size-x-large: 1.75rem;
+  --font-size-xx-large: 2.5rem;
+  --font-weight-default: 400;
+  --font-weight-bold: 600;
+  --font-weight-bolder: 800;
+  --line-height-default: 1.5rem;
 }
 
 body {
@@ -19,4 +29,12 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--line-height-default);
+  margin: 0;
+}
+
+a {
+  color: var(--color-txt-default);
+  text-decoration: none;
 }

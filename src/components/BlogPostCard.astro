@@ -1,0 +1,41 @@
+---
+import FormattedDate from '@components/FormattedDate.astro';
+import { truncate } from '@utils/string';
+
+export interface Props {
+  title: string;
+  publishDate: Date;
+  url: string;
+  content: string;
+}
+
+const { title, publishDate, url, content } = Astro.props;
+---
+
+<a href={url} aria-label={`Post: ${title}`}>
+  <article>
+    <header>
+      <FormattedDate date={publishDate} />
+      <h2>{title}</h2>
+    </header>
+    <span id="post-content">{truncate(content, 300)}</span>
+  </article>
+</a>
+
+<style>
+  article {
+    border: 1px solid rgba(236, 233, 230, 0.15);
+    border-radius: 0.2rem;
+    box-shadow: 5px 5px 7px rgb(21, 30, 38);
+    padding: 2rem;
+  }
+
+  header {
+    text-align: center;
+    & h2 {
+      font-size: var(--font-size-x-large);
+      font-weight: var(--font-weight-bolder);
+      margin-top: 0.25rem;
+    }
+  }
+</style>
