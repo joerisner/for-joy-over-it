@@ -11,6 +11,8 @@
   --font-weight-bold: 600;
   --font-weight-bolder: 800;
   --line-height-default: 1.5rem;
+  --line-height-medium: 1.75rem;
+  --line-height-large: 2.4rem;
 }
 
 body {
