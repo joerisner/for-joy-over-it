@@ -1,7 +1,7 @@
 ---
 title: 'His Word, Our Life'
 publishDate: '2023-10-14'
-isDraft: false
+isDraft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam luctus elementum consectetur. Nunc vel turpis convallis, facilisis ligula vel, commodo dui. Pellentesque consequat nunc id eros ultricies tincidunt. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer orci urna, fermentum ut posuere eget, pulvinar tempus mauris. Praesent vitae ipsum vitae dui mollis volutpat eget sed lorem. Integer ut turpis rhoncus, malesuada felis sed, viverra est.
