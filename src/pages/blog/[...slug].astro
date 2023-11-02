@@ -1,13 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 import { SITE_TITLE } from 'src/config';
+import { getFinalizedPosts } from '@utils/blog';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import FormattedDate from '@components/FormattedDate.astro';
 
 export const getStaticPaths = async () => {
-  const posts = await getCollection('blog');
+  const finalizedPosts = await getFinalizedPosts();
 
-  return posts.map(post => ({
+  return finalizedPosts.map(post => ({
     params: { slug: post.slug },
     props: { post }
   }));
