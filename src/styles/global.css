@@ -10,7 +10,7 @@
   --font-weight-default: 400;
   --font-weight-bold: 600;
   --font-weight-bolder: 800;
-  --line-height-default: 1.5rem;
+  --line-height-default: 1.55rem;
   --line-height-medium: 1.75rem;
   --line-height-large: 2.4rem;
 }
@@ -39,4 +39,11 @@ body {
 a {
   color: var(--color-txt-default);
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  article {
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-medium);
+  }
 }
