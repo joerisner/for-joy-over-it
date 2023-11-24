@@ -1,0 +1,23 @@
+---
+export interface Props {
+  href: string;
+  text: string;
+}
+
+const { href, text, ...rest } = Astro.props;
+---
+
+<li><a href={href} {...rest}>{text}</a></li>
+
+<style>
+  a:hover {
+    color: var(--color-txt-muted);
+  }
+
+  @media (max-width: 900px) {
+    a {
+      font-size: var(--font-size-x-large);
+      line-height: var(--line-height-large);
+    }
+  }
+</style>
