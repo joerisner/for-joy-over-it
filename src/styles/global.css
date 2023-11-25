@@ -37,13 +37,5 @@ body {
 }
 
 a {
-  color: var(--color-txt-default);
   text-decoration: none;
-}
-
-@media (min-width: 768px) {
-  article {
-    font-size: var(--font-size-large);
-    line-height: var(--line-height-medium);
-  }
 }

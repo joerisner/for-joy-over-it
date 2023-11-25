@@ -61,28 +61,22 @@ import NavLink from './NavLink.astro';
       position: fixed;
       width: 100%;
       z-index: 999;
-      /* background-image: url('/icons/nav-open.svg'); */
-      /* aspect-ratio: 1; */
       & span {
+        align-items: center;
         color: var(--color-txt-default);
-        font-size: var(--font-size-large);
+        display: flex;
+        font-size: 1.4rem;
       }
-    }
-
-    span {
-      display: flex;
-      align-items: center;
-    }
-
-    span:after {
-      background-image: url('/icons/nav-open.svg');
-      background-size: 2rem 2rem;
-      content: '';
-      display: inline-block;
-      height: 2rem;
-      width: 2rem;
-      margin-left: 0.5rem;
-      margin-top: 0.5rem;
+      & span:after {
+        background-image: url('/icons/nav-open.svg');
+        background-size: 2rem 2rem;
+        content: '';
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+      }
     }
 
     #mobile-nav-toggle[aria-expanded='true'] {

@@ -27,6 +27,7 @@ const { title, publishDate, url, content } = Astro.props;
     border: 1px solid rgba(236, 233, 230, 0.15);
     border-radius: 0.2rem;
     box-shadow: 5px 5px 7px rgb(21, 30, 38);
+    color: var(--color-txt-default);
     padding: 2rem;
   }
 
@@ -37,6 +38,13 @@ const { title, publishDate, url, content } = Astro.props;
       font-weight: var(--font-weight-bolder);
       line-height: var(--line-height-medium);
       margin-top: 0.25rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    article {
+      font-size: var(--font-size-large);
+      line-height: var(--line-height-medium);
     }
   }
 </style>
