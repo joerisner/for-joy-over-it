@@ -1,5 +1,5 @@
 ---
-import NavLink from './NavLink.astro';
+import NavLink from '@components/NavLink.astro';
 ---
 
 <nav id="primary-nav" data-visible="false">
@@ -63,15 +63,14 @@ import NavLink from './NavLink.astro';
       z-index: 999;
       & span {
         align-items: center;
-        color: var(--color-txt-default);
+        color: var(--color-txt-secondary);
         display: flex;
         font-size: 1.4rem;
       }
       & span:after {
         background-image: url('/icons/nav-open.svg');
-        background-size: 2rem 2rem;
+        color: var(--color-txt-secondary);
         content: '';
-        display: inline-block;
         height: 2rem;
         width: 2rem;
         margin-left: 0.5rem;
