@@ -1,0 +1,24 @@
+section {
+  text-align: center;
+
+  & h1 {
+    color: var(--color-txt-secondary);
+    font-weight: var(--font-weight-bolder);
+    font-size: var(--font-size-xx-large);
+    line-height: var(--line-height-large);
+    margin: 0.5rem 0 3rem;
+  }
+}
+
+.content {
+  & h2, h3 {
+    color: var(--color-txt-secondary);
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-medium);
+  }
+}

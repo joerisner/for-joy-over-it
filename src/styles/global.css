@@ -1,8 +1,8 @@
 :root {
-  --color-bg-main: rgb(27, 39, 51);
-  --color-box-border: rgba(236, 233, 230, 0.15);
-  --color-txt-default: rgb(236, 233, 230);
-  --color-txt-muted: rgba(236, 233, 230, 0.66);
+  --color-bg-main: rgb(16 21 29);
+  --color-box-border: rgba(46, 60, 81, 1);
+  --color-txt-default: rgba(128, 140, 156, 1);
+  --color-txt-secondary: rgb(191, 199, 210);
   --font-size-small: 0.95rem;
   --font-size-default: 1.125rem;
   --font-size-large: 1.25rem;
