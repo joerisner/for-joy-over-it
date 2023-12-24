@@ -1,5 +1,6 @@
 :root {
-  --color-bg-main: rgb(16 21 29);
+  --color-bg-default: rgb(16 21 29);
+  --color-bg-secondary: rgb(25 33 46);
   --color-box-border: rgba(46, 60, 81, 1);
   --color-txt-default: rgba(128, 140, 156, 1);
   --color-txt-secondary: rgb(191, 199, 210);
@@ -18,4 +19,9 @@
 
 a {
   text-decoration: none;
+}
+
+::selection {
+  background-color: var(--color-txt-secondary);
+  color: var(--color-bg-default);
 }
