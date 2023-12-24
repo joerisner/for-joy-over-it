@@ -11,7 +11,8 @@ section {
 }
 
 .content {
-  & h2, h3 {
+  & h2,
+  h3 {
     color: var(--color-txt-secondary);
   }
 }
