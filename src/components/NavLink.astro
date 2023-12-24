@@ -12,16 +12,17 @@ const { href, text, ...rest } = Astro.props;
 <style>
   a {
     color: var(--color-txt-secondary);
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-large);
   }
 
   a:hover {
     color: var(--color-txt-default);
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     a {
       font-size: var(--font-size-x-large);
-      line-height: var(--line-height-large);
     }
   }
 </style>
