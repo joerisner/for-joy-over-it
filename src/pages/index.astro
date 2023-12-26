@@ -8,7 +8,7 @@ const posts = finalizedPosts.sort((a, b) => b.data.publishDate.valueOf() - a.dat
 ---
 
 <BaseLayout>
-  <section>
+  <section aria-label="Blog Posts">
     {posts.map(p => <BlogPostCard title={p.data.title} publishDate={p.data.publishDate} url={`/blog/${p.slug}`} content={p.body} />)}
   </section>
 </BaseLayout>

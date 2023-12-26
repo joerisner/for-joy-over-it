@@ -18,7 +18,7 @@ const { title, publishDate, url, content } = Astro.props;
       <FormattedDate date={publishDate} />
       <h2>{title}</h2>
     </header>
-    <span id="post-content">{truncate(content, 300)}</span>
+    <span role="dialog">{truncate(content, 300)}</span>
   </article>
 </a>
 
