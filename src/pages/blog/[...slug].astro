@@ -19,9 +19,9 @@ const { Content, headings } = await post.render();
 ---
 
 <BaseLayout title={`${post.data.title} | ${SITE_TITLE}`}>
-  <section>
+  <section aria-labelledby="post-title">
     <FormattedDate date={post.data.publishDate} />
-    <h1>{post.data.title}</h1>
+    <h1 id="post-title">{post.data.title}</h1>
   </section>
   <article class="content">
     <Content />
