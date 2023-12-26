@@ -2,6 +2,7 @@
 import NavLink from '@components/NavLink.astro';
 ---
 
+<button aria-controls="nav-list" aria-expanded="false" aria-label="Nav Toggle" id="nav-toggle-button"></button>
 <nav id="nav-panel" aria-label="Main" data-visible="false">
   <ul id="nav-list">
     <NavLink text="Home" href="/" />
@@ -10,7 +11,6 @@ import NavLink from '@components/NavLink.astro';
     <NavLink text="Highlights" href="/highlights" />
   </ul>
 </nav>
-<button aria-controls="nav-list" aria-expanded="false" aria-label="Nav Toggle" id="nav-toggle-button"></button>
 
 <style>
   #nav-panel {
