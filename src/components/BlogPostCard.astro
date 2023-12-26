@@ -12,13 +12,13 @@ export interface Props {
 const { title, publishDate, url, content } = Astro.props;
 ---
 
-<a href={url} aria-label={`Post: ${title}`}>
+<a href={url} aria-label={`Blog post: ${title}`}>
   <article>
     <header>
       <FormattedDate date={publishDate} />
       <h2>{title}</h2>
     </header>
-    <span role="dialog">{truncate(content, 300)}</span>
+    <span role="dialog" aria-label="Content">{truncate(content, 300)}</span>
   </article>
 </a>
 
