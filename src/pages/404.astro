@@ -1,5 +1,53 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import 'src/styles/global.css';
 ---
 
-<BaseLayout title={'Not Found'} />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>{`Not Found | ${SITE_TITLE}`}</title>
+    <meta name="description" content={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main>
+      <h1>404</h1>
+      <p>Sorry, the page you are looking for does not exist.</p>
+      <a role="button" href="/">Back to homepage</a>
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    min-height: 100vh;
+  }
+
+  main {
+    margin: 3rem auto;
+    max-width: 48rem;
+    padding: 3.25rem 1.25rem;
+    text-align: center;
+  }
+
+  h1 {
+    color: var(--color-txt-secondary);
+    font-size: 9rem;
+    line-height: 10rem;
+    margin: 0;
+  }
+
+  p {
+    margin: 0 0 2rem;
+  }
+
+  a {
+    color: var(--color-txt-secondary);
+  }
+</style>
