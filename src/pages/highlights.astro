@@ -1,0 +1,78 @@
+---
+import { SITE_TITLE } from 'src/config';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title={`Highlights | ${SITE_TITLE}`}>
+  <section>
+    <button id="fetch-highlight-btn">Enlighten me, Boon</button>
+    <figure>
+      <blockquote id="quotation"></blockquote>
+      <figcaption>
+        <p id="author"></p>
+        <cite id="source"></cite>
+      </figcaption>
+    </figure>
+  </section>
+</BaseLayout>
+
+<style>
+  section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  figure,
+  figcaption,
+  p {
+    margin: 0;
+  }
+
+  figure {
+    width: 100%;
+  }
+
+  #quotation {
+    margin: 0 0 1.5rem 0;
+    font-size: var(--font-size-large);
+    font-style: italic;
+  }
+
+  figcaption {
+    text-align: right;
+  }
+
+  cite {
+    font-style: normal;
+  }
+
+  #fetch-highlight-btn {
+    background-color: var(--color-bg-default);
+    border: 2px solid var(--color-txt-secondary);
+    border-radius: 0.45rem;
+    color: var(--color-txt-secondary);
+    cursor: pointer;
+    font-size: var(--font-size-default);
+    margin: 0 auto;
+    padding: 0.4rem 1rem;
+  }
+</style>
+
+<script>
+  const insertRandomHighlight = async () => {
+    const response = await fetch('https://highlights-api-production.up.railway.app/random');
+    const { author, body, source } = await response.json();
+
+    document.getElementById('quotation').textContent = body;
+    document.getElementById('author').textContent = author;
+    document.getElementById('source').textContent = source;
+  };
+
+  const button = document.getElementById('fetch-highlight-btn');
+
+  window.addEventListener('load', insertRandomHighlight);
+  button.addEventListener('click', insertRandomHighlight);
+</script>
