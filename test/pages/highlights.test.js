@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { SITE_TITLE } from 'src/config';
 
 test.describe('Highlights', () => {
   test('renders random highlight', async ({ page }) => {
@@ -13,7 +12,7 @@ test.describe('Highlights', () => {
     });
 
     await page.goto('/highlights');
-    await expect(page).toHaveTitle(`Highlights | ${SITE_TITLE}`);
+    await expect(page).toHaveTitle('Highlights | Joseph Risner');
     await expect(authorName).toHaveText('Terry Hogan');
     await expect(sourceTitle).toHaveText('Hulkamania');
     await expect(quoteText).toHaveText('Ya brother!');

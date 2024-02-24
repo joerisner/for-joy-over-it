@@ -1,6 +1,5 @@
 ---
 import '@styles/blog.css';
-import { SITE_TITLE } from 'src/config';
 import { getFinalizedPosts } from '@utils/blog';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import FormattedDate from '@components/FormattedDate.astro';
@@ -15,13 +14,14 @@ export const getStaticPaths = async () => {
 };
 
 const { post } = Astro.props;
-const { Content, headings } = await post.render();
+const { title, publishDate } = post.data;
+const { Content } = await post.render();
 ---
 
-<BaseLayout title={`${post.data.title} | ${SITE_TITLE}`}>
+<BaseLayout title={title}>
   <section aria-labelledby="post-title">
-    <FormattedDate date={post.data.publishDate} />
-    <h1 id="post-title">{post.data.title}</h1>
+    <FormattedDate date={publishDate} />
+    <h1 id="post-title">{title}</h1>
   </section>
   <article class="content">
     <Content />
