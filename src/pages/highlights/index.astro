@@ -65,13 +65,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     const response = await fetch('https://highlights-api-production.up.railway.app/random');
     const { author, body, source } = await response.json();
 
-    document.getElementById('quotation').textContent = body;
-    document.getElementById('author').textContent = author;
-    document.getElementById('source').textContent = source;
+    document.getElementById('quotation')!.textContent = body;
+    document.getElementById('author')!.textContent = author;
+    document.getElementById('source')!.textContent = source;
   };
 
   const button = document.getElementById('fetch-highlight-btn');
 
   window.addEventListener('load', insertRandomHighlight);
-  button.addEventListener('click', insertRandomHighlight);
+  button?.addEventListener('click', insertRandomHighlight);
 </script>
