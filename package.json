@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "astro build",
-    "clean": "node ./bin/clean.js",
-    "format": "prettier . --check",
+    "clean": "bash bin/clean",
+    "format": "prettier --check \"./**/*.{astro,css,js,json,ts,yml}\"",
     "preview": "astro preview",
     "start": "astro dev",
     "test": "playwright test",

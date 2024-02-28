@@ -20,6 +20,7 @@ test.describe('Index Page', () => {
     const postTitle = await post.getByRole('heading', { level: 2 }).textContent();
     const postContent = await post.getByRole('dialog').textContent();
 
+    await expect(page).toHaveTitle('Joseph Risner');
     await expect(blogPostsSection).toBeVisible();
     expect(postContent).toHaveLength(303);
 
