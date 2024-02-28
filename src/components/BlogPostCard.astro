@@ -1,5 +1,6 @@
 ---
 import FormattedDate from '@components/FormattedDate.astro';
+import Heading from '@components/Heading.astro';
 import { truncate } from '@utils/string';
 
 export interface Props {
@@ -16,7 +17,7 @@ const { title, publishDate, url, content } = Astro.props;
   <article>
     <header>
       <FormattedDate date={publishDate} />
-      <h2>{title}</h2>
+      <Heading text={title} />
     </header>
     <span role="dialog" aria-label="Content">{truncate(content, 300)}</span>
   </article>
@@ -33,13 +34,6 @@ const { title, publishDate, url, content } = Astro.props;
 
   header {
     text-align: center;
-    & h2 {
-      color: var(--color-txt-secondary);
-      font-size: var(--font-size-x-large);
-      font-weight: var(--font-weight-bolder);
-      line-height: var(--line-height-medium);
-      margin-top: 0.25rem;
-    }
   }
 
   @media (min-width: 768px) {
