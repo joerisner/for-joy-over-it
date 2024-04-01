@@ -31,7 +31,7 @@ export default defineConfig({
     trace: 'on-first-retry'
   },
   webServer: {
-    command: 'npm run build && npm run preview',
+    command: 'npm run preview',
     reuseExistingServer: !process.env.CI,
     timeout: 20 * 1000,
     url: 'http://localhost:4000'
