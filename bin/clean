@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DIRS=(./.astro ./dist ./test/artifacts ./test/report)
 
