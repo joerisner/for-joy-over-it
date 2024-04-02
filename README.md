@@ -5,7 +5,7 @@ My personal blog site built with [Astro](https://astro.build/) and minimal depen
 Install dependencies and start the application.
 
 ```sh
-make start
+make
 ```
 
 Run tests.
