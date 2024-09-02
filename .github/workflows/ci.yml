@@ -31,7 +31,6 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-
       - name: prettier
         run: npm run format
 
@@ -47,13 +46,10 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-
       - name: install browsers
         run: npx playwright install --with-deps
-
       - name: run tests
         run: make test
-
       - uses: actions/upload-artifact@v4
         if: always()
         with:
