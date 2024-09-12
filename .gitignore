@@ -10,7 +10,7 @@ test/artifacts/
 test/report/
 
 # Env vars
-.env
+.env*
 
 # MacOS
 .DS_Store
