@@ -62,7 +62,13 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 <script>
   const insertRandomHighlight = async () => {
-    const response = await fetch('https://highlights-api-production.up.railway.app/random');
+    const { PUBLIC_HIGHLIGHTS_API_URL } = import.meta.env;
+
+    if (!PUBLIC_HIGHLIGHTS_API_URL) {
+      throw Error("Missing 'PUBLIC_HIGHLIGHTS_API_URL' environment variable!");
+    }
+
+    const response = await fetch(`${PUBLIC_HIGHLIGHTS_API_URL}/random`);
     const { author, body, source } = await response.json();
 
     document.getElementById('quotation')!.textContent = body;
