@@ -4,7 +4,19 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 <BaseLayout title={'Highlights'}>
   <section>
-    <button id="fetch-highlight-btn">Enlighten me, Boon</button>
+    <div class="btn-group">
+      <button id="random-highlight-btn">Enlighten me, Boon</button>
+      <button class="cta-btn" id="search-btn">Search</button>
+    </div>
+    <dialog>
+      <form>
+        <h3>Search for highlights</h3>
+        <div class="btn-group">
+          <button formmethod="dialog" id="close-modal-btn">Cancel</button>
+          <button type="submit" class="cta-btn">Submit</button>
+        </div>
+      </form>
+    </dialog>
     <figure>
       <blockquote id="quotation"></blockquote>
       <figcaption>
@@ -22,6 +34,62 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     flex-direction: column;
     gap: 3rem;
     justify-content: center;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    background-color: inherit;
+    border: 2px solid var(--color-txt-secondary);
+    border-radius: 0.45rem;
+    color: var(--color-txt-secondary);
+    cursor: pointer;
+    font-size: var(--font-size-default);
+    margin: 0 auto;
+    padding: 0.4rem 1rem;
+  }
+
+  button:hover {
+    filter: brightness(80%);
+  }
+
+  .cta-btn {
+    background-color: var(--color-txt-secondary);
+    color: var(--color-bg-default);
+  }
+
+  dialog {
+    margin: 20% auto;
+    width: 80%;
+    max-width: 48rem;
+    background-color: var(--color-bg-secondary);
+    padding: 1rem;
+    border: 0;
+    border-radius: 0.5rem;
+
+    & h3 {
+      color: var(--color-txt-secondary);
+      font-size: var(--font-size-large);
+      font-weight: var(--font-weight-bolder);
+      line-height: var(--line-height-medium);
+      margin-top: 0;
+    }
+
+    & .btn-group {
+      gap: 0.8rem;
+      justify-content: right;
+    }
+
+    & button {
+      margin: 0;
+    }
+  }
+
+  dialog::backdrop {
+    backdrop-filter: brightness(80%) blur(3px);
   }
 
   figure,
@@ -48,19 +116,15 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     font-style: normal;
   }
 
-  #fetch-highlight-btn {
-    background-color: var(--color-bg-default);
-    border: 2px solid var(--color-txt-secondary);
-    border-radius: 0.45rem;
-    color: var(--color-txt-secondary);
-    cursor: pointer;
-    font-size: var(--font-size-default);
-    margin: 0 auto;
-    padding: 0.4rem 1rem;
+  @media (min-width: 768px) {
+    dialog {
+      margin: 10% auto;
+    }
   }
 </style>
 
 <script>
+  // Random highlight behavior
   const insertRandomHighlight = async () => {
     const { PUBLIC_HIGHLIGHTS_API_URL } = import.meta.env;
 
@@ -76,8 +140,15 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     document.getElementById('source')!.textContent = source;
   };
 
-  const button = document.getElementById('fetch-highlight-btn');
-
+  const randomHighlightButton = document.getElementById('random-highlight-btn');
+  randomHighlightButton?.addEventListener('click', insertRandomHighlight);
   window.addEventListener('load', insertRandomHighlight);
-  button?.addEventListener('click', insertRandomHighlight);
+
+  // Search behavior
+  const searchButton = document.getElementById('search-btn');
+  const searchModal = document.querySelector('dialog') as HTMLDialogElement;
+  const modalCloseButton = document.getElementById('close-modal-btn');
+
+  searchButton?.addEventListener('click', () => searchModal?.showModal());
+  modalCloseButton?.addEventListener('click', () => searchModal?.close());
 </script>
