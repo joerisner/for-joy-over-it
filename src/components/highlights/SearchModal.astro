@@ -41,21 +41,30 @@ const tags = await getTags().then(tags =>
   <form>
     <div>
       <label for="authors">Author</label>
-      <select id="authors" name="author">
-        {authors.map(({ id, firstName, lastName }) => <option value={id}>{`${firstName} ${lastName}`}</option>)}
-      </select>
+      <div class="select-wrapper">
+        <select id="authors" name="author">
+          <option value="" selected disabled hidden>Select...</option>
+          {authors.map(({ id, firstName, lastName }) => <option value={id}>{`${firstName} ${lastName}`}</option>)}
+        </select>
+      </div>
     </div>
     <div>
       <label for="sources">Source</label>
-      <select id="sources" name="source">
-        {sources.map(({ id, title }) => <option value={id}>{title}</option>)}
-      </select>
+      <div class="select-wrapper">
+        <select id="sources" name="source">
+          <option value="" selected disabled hidden>Select...</option>
+          {sources.map(({ id, title }) => <option value={id}>{title}</option>)}
+        </select>
+      </div>
     </div>
     <div>
       <label for="tags">Tag</label>
-      <select id="tags" name="tag">
-        {tags.map(({ id, name }) => <option value={id}>{name}</option>)}
-      </select>
+      <div class="select-wrapper">
+        <select id="tags" name="tag">
+          <option value="" selected disabled hidden>Select...</option>
+          {tags.map(({ id, name }) => <option value={id}>{name}</option>)}
+        </select>
+      </div>
     </div>
     <menu>
       <Button text="Reset" type="reset" />
@@ -106,19 +115,36 @@ const tags = await getTags().then(tags =>
     width: 2rem;
   }
 
-  form {
+  form,
+  div {
     display: flex;
     flex-direction: column;
+  }
 
-    & label {
-      color: var(--color-txt-secondary);
-    }
+  form {
+    gap: 1.5rem;
+  }
+
+  label {
+    color: var(--color-txt-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .select-wrapper select {
+    appearance: none;
+    background-color: var(--color-txt-secondary);
+    border-radius: 0.35rem;
+    color: var(--color-bg-secondary);
+    cursor: pointer;
+    font-size: var(--font-size-default);
+    padding: 0.25rem 0.75rem;
+    width: 90%;
   }
 
   menu {
     display: flex;
     gap: 1rem;
-    margin: 0;
+    margin: 4rem 0 0 0;
     padding: 0;
     justify-content: right;
 
@@ -134,6 +160,10 @@ const tags = await getTags().then(tags =>
     dialog {
       margin: 10% auto;
     }
+
+    .select-wrapper select {
+      max-width: 70%;
+    }
   }
 </style>
 
@@ -144,6 +174,7 @@ const tags = await getTags().then(tags =>
   closeModalButton?.addEventListener('click', () => searchModal?.close());
 
   // Handle form submission
+  // TODO: Update this.
   searchModal.addEventListener('close', () => {
     console.log(searchModal.returnValue);
   });
