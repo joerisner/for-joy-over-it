@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props extends HTMLAttributes<'button'> {
+  text: string;
+  isCta?: boolean;
+}
+
+const { text, isCta = false, ...rest } = Astro.props;
+---
+
+<button class:list={[{ cta: isCta }]} {...rest}>{text}</button>
+
+<style>
+  button {
+    background-color: inherit;
+    border: 2px solid var(--color-txt-secondary);
+    border-radius: 0.45rem;
+    color: var(--color-txt-secondary);
+    font-size: var(--font-size-default);
+    margin: 0 auto;
+    padding: 0.4rem 1rem;
+  }
+
+  .cta {
+    background-color: var(--color-txt-secondary);
+    color: var(--color-bg-default);
+  }
+</style>

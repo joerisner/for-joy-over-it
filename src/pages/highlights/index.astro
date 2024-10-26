@@ -1,49 +1,16 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { getAuthors, getSources, getTags } from '@helpers/highlights-api-helper';
-
-const authors = await getAuthors();
-const sources = await getSources();
-const tags = await getTags();
+import SearchModal from '@components/highlights/SearchModal.astro';
+import Button from '@components/Button.astro';
 ---
 
 <BaseLayout title={'Highlights'}>
   <section>
     <menu>
-      <button id="random-highlight-btn">Enlighten me, Boon</button>
-      <button class="cta-btn" id="search-btn">Search</button>
+      <Button text="Enlighten me, Boon" id="random-highlight-btn" />
+      <Button text="Search" id="search-btn" isCta={true} />
     </menu>
-    <dialog>
-      <header>
-        <h3>Search for highlights</h3>
-        <button id="close-modal-btn"></button>
-      </header>
-      <form>
-        <div>
-          <label for="authors">Author</label>
-          <select id="authors" name="author">
-            {authors.map(({ id, firstName, lastName }) => <option value={id}>{`${firstName} ${lastName}`}</option>)}
-          </select>
-        </div>
-        <div>
-          <label for="sources">Source</label>
-          <select id="sources" name="source">
-            {sources.map(({ id, title }) => <option value={id}>{title}</option>)}
-          </select>
-        </div>
-        <div>
-          <label for="tags">Tag</label>
-          <select id="tags" name="tag">
-            {tags.map(({ id, name }) => <option value={id}>{name}</option>)}
-          </select>
-        </div>
-        <menu>
-          <button type="reset">Reset</button>
-          <button type="submit" class="cta-btn" value="submit">Submit</button>
-          <!-- <button formmethod="dialog" type="submit" class="cta-btn" value="submit">Submit</button> -->
-        </menu>
-      </form>
-    </dialog>
+    <SearchModal />
     <figure>
       <blockquote id="quotation"></blockquote>
       <figcaption>
@@ -70,85 +37,6 @@ const tags = await getTags();
     padding: 0;
   }
 
-  button {
-    background-color: inherit;
-    border: 2px solid var(--color-txt-secondary);
-    border-radius: 0.45rem;
-    color: var(--color-txt-secondary);
-    cursor: pointer;
-    font-size: var(--font-size-default);
-    margin: 0 auto;
-    padding: 0.4rem 1rem;
-  }
-
-  button:hover {
-    filter: brightness(80%);
-  }
-
-  .cta-btn {
-    background-color: var(--color-txt-secondary);
-    color: var(--color-bg-default);
-  }
-
-  dialog {
-    margin: 20% auto;
-    width: 80%;
-    max-width: 48rem;
-    background-color: var(--color-bg-secondary);
-    padding: 1rem;
-    border: 0;
-    border-radius: 0.5rem;
-
-    & h3 {
-      color: var(--color-txt-secondary);
-      font-size: var(--font-size-large);
-      font-weight: var(--font-weight-bolder);
-      line-height: var(--line-height-medium);
-      margin-top: 0;
-    }
-
-    & button {
-      margin: 0;
-    }
-
-    & #close-modal-btn {
-      background-image: url('/icons/nav-closed.svg');
-      border: 0;
-      height: 2rem;
-      padding: 0;
-      width: 2rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-
-      & label {
-        color: var(--color-txt-secondary);
-      }
-    }
-
-    & header {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    & menu {
-      justify-content: right;
-
-      & button[type='reset'] {
-        border: 0;
-        color: var(--color-txt-default);
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-      }
-    }
-  }
-
-  dialog::backdrop {
-    backdrop-filter: brightness(80%) blur(3px);
-  }
-
   figure,
   figcaption,
   p {
@@ -172,12 +60,6 @@ const tags = await getTags();
   cite {
     font-style: normal;
   }
-
-  @media (min-width: 768px) {
-    dialog {
-      margin: 10% auto;
-    }
-  }
 </style>
 
 <script>
@@ -198,14 +80,6 @@ const tags = await getTags();
   // ---- Search behavior ----
   const searchButton = document.getElementById('search-btn');
   const searchModal = document.querySelector('dialog') as HTMLDialogElement;
-  const closeModalButton = document.getElementById('close-modal-btn');
 
-  // Open and close modal
   searchButton?.addEventListener('click', () => searchModal?.showModal());
-  closeModalButton?.addEventListener('click', () => searchModal?.close());
-
-  // Handle form submission
-  searchModal.addEventListener('close', () => {
-    console.log(searchModal.returnValue);
-  });
 </script>
