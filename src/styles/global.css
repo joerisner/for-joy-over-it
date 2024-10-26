@@ -42,6 +42,15 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
+a:hover,
+button:hover {
+  filter: brightness(80%);
+}
+
 ::selection {
   background-color: var(--color-txt-secondary);
   color: var(--color-bg-default);
