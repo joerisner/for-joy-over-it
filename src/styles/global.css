@@ -46,7 +46,6 @@ button {
   cursor: pointer;
 }
 
-a:hover,
 button:hover {
   filter: brightness(80%);
 }
