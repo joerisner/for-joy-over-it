@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "scripts": {
     "format": "prettier --check \"./**/*.{astro,css,js,json,ts,yml}\"",
-    "preview": "astro preview",
+    "preview": "astro build && npx astro preview",
     "test:ui": "playwright test --ui",
     "test:report": "playwright show-report"
   },
