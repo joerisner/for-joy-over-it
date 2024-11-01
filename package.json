@@ -10,7 +10,7 @@
     "test:report": "playwright show-report"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/sitemap": "^3.2.1",
     "@playwright/test": "^1.47.2",
     "astro": "^4.15.10",
     "prettier": "^3.3.3",
