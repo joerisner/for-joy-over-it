@@ -1,85 +1,87 @@
 ---
+import '@styles/highlights/index.css';
 import BaseLayout from '@layouts/BaseLayout.astro';
-import SearchModal from '@components/highlights/SearchModal.astro';
 import Button from '@components/Button.astro';
+import { getAuthors, getSources, getTags } from '@scripts/highlights/highlights-api-helper';
+
+const authors = await getAuthors().then(authors =>
+  authors.sort((a, b) => {
+    if (a.firstName.toUpperCase() < b.firstName.toUpperCase()) {
+      return -1;
+    } else {
+      return 1;
+    }
+  })
+);
+
+const sources = await getSources().then(sources =>
+  sources.sort((a, b) => {
+    if (a.title.toUpperCase() < b.title.toUpperCase()) {
+      return -1;
+    } else {
+      return 1;
+    }
+  })
+);
+
+const tags = await getTags().then(tags =>
+  tags.sort((a, b) => {
+    if (a.name.toUpperCase() < b.name.toUpperCase()) {
+      return -1;
+    } else {
+      return 1;
+    }
+  })
+);
 ---
 
 <BaseLayout title={'Highlights'}>
   <section>
-    <menu>
+    <menu class="search-button-menu">
       <Button text="Enlighten me, Boon" id="random-highlight-btn" />
       <Button text="Search" id="search-btn" isCta={true} />
     </menu>
-    <SearchModal />
-    <figure>
-      <blockquote id="quotation"></blockquote>
-      <figcaption>
-        <p id="author"></p>
-        <cite id="source"></cite>
-      </figcaption>
-    </figure>
+    <dialog>
+      <header>
+        <h3>Search for highlights</h3>
+        <button id="close-modal-btn"></button>
+      </header>
+      <form>
+        <div class="form-field">
+          <label for="authors">Author</label>
+          <div>
+            <select id="authors" name="author">
+              <option value="" selected disabled hidden>Select...</option>
+              {authors.map(({ id, firstName, lastName }) => <option value={id}>{`${firstName} ${lastName}`}</option>)}
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="sources">Source</label>
+          <div>
+            <select id="sources" name="source">
+              <option value="" selected disabled hidden>Select...</option>
+              {sources.map(({ id, title }) => <option value={id}>{title}</option>)}
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="tags">Tag</label>
+          <div>
+            <select id="tags" name="tag">
+              <option value="" selected disabled hidden>Select...</option>
+              {tags.map(({ id, name }) => <option value={id}>{name}</option>)}
+            </select>
+          </div>
+        </div>
+        <menu>
+          <Button text="Reset" type="reset" />
+          <Button text="Submit" type="submit" value="submit" isCta={true} />
+        </menu>
+      </form>
+    </dialog>
+    <article></article>
   </section>
 </BaseLayout>
 
-<style>
-  section {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    justify-content: center;
-  }
-
-  menu {
-    display: flex;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  figure,
-  figcaption,
-  p {
-    margin: 0;
-  }
-
-  figure {
-    width: 100%;
-  }
-
-  #quotation {
-    margin: 0 0 1.5rem 0;
-    font-size: var(--font-size-large);
-    font-style: italic;
-  }
-
-  figcaption {
-    text-align: right;
-  }
-
-  cite {
-    font-style: normal;
-  }
-</style>
-
-<script>
-  import { getRandomHighlight } from '@helpers/highlights-api-helper';
-
-  // ---- Random highlight behavior ----
-  const insertRandomHighlight = async () => {
-    const { author, body, source } = await getRandomHighlight();
-    document.getElementById('quotation')!.textContent = body;
-    document.getElementById('author')!.textContent = author;
-    document.getElementById('source')!.textContent = source;
-  };
-
-  const randomHighlightButton = document.getElementById('random-highlight-btn');
-  randomHighlightButton?.addEventListener('click', insertRandomHighlight);
-  window.addEventListener('load', insertRandomHighlight);
-
-  // ---- Search behavior ----
-  const searchButton = document.getElementById('search-btn');
-  const searchModal = document.querySelector('dialog') as HTMLDialogElement;
-
-  searchButton?.addEventListener('click', () => searchModal?.showModal());
-</script>
+<script src="@scripts/highlights/index.ts"></script>

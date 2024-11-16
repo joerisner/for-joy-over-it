@@ -46,3 +46,6 @@ export const getTags = async (): Promise<Array<Tag>> =>
 
 export const getRandomHighlight = async (): Promise<Highlight> =>
   await fetch(`${PUBLIC_HIGHLIGHTS_API_URL}/random`).then(res => res.json());
+
+export const getHighlightsWithQuery = async (queryStr: string): Promise<Array<Highlight>> =>
+  await fetch(`${PUBLIC_HIGHLIGHTS_API_URL}/highlights?${queryStr}`).then(res => res.json());

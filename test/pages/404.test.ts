@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('404 Page', () => {
   test('renders custom page for 404 response', async ({ page }) => {
     const mainContent = page.getByRole('main');
-    const backToHomeButton = page.getByRole('button');
+    const backToHomeButton = page.getByRole('button', { name: 'Back to homepage' });
 
     await page.goto('/foo');
 
