@@ -1,5 +1,3 @@
-.DEFAULT_GOAL=start
-
 help: ## Show this help
 	@awk 'BEGIN {FS = ":.*##"; \
 	printf "\nUsage:\n\033[36m\033[0m"} /^[$$()% a-zA-Z_-]+:.*?##/ { \

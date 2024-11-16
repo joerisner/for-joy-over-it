@@ -1,0 +1,144 @@
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.search-button-menu {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  width: 100%;
+}
+
+dialog {
+  margin: 20% auto;
+  width: 80%;
+  max-width: 48rem;
+  background-color: var(--color-bg-secondary);
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+
+  & header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & h3 {
+    color: var(--color-txt-secondary);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bolder);
+    line-height: var(--line-height-medium);
+    margin-top: 0;
+  }
+
+  & #close-modal-btn {
+    background-color: inherit;
+    background-image: url("/icons/nav-closed.svg");
+    border: 0;
+    height: 2rem;
+    outline: none;
+    padding: 0;
+    width: 2rem;
+  }
+
+  & form,
+  .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & form {
+    gap: 1.5rem;
+  }
+
+  & label {
+    color: var(--color-txt-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  & menu {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0 0 0;
+    padding: 0;
+    justify-content: right;
+
+    & button {
+      margin: 0;
+      padding: 0;
+    }
+
+    & button[type="reset"] {
+      border: 0;
+      color: var(--color-txt-default);
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+    }
+  }
+
+  & select {
+    appearance: none;
+    background-color: var(--color-txt-secondary);
+    border: 0;
+    border-radius: 0.35rem;
+    color: var(--color-bg-secondary);
+    cursor: pointer;
+    font-size: var(--font-size-default);
+    padding: 0.25rem 0.75rem;
+    width: 90%;
+  }
+
+  & select:hover:disabled {
+    cursor: not-allowed;
+  }
+}
+
+dialog::backdrop {
+  backdrop-filter: brightness(80%) blur(3px);
+}
+
+figure,
+figcaption,
+p {
+  margin: 0;
+}
+
+figure {
+  width: 100%;
+}
+
+blockquote {
+  margin: 0 0 1.5rem 0;
+  font-size: var(--font-size-large);
+  font-style: italic;
+}
+
+figcaption {
+  text-align: right;
+}
+
+cite {
+  font-style: normal;
+}
+
+@media (min-width: 768px) {
+  dialog {
+    margin: 10% auto;
+
+    & select {
+      max-width: 70%;
+    }
+
+    & menu {
+      margin: 4rem 0 0 0;
+    }
+  }
+}
