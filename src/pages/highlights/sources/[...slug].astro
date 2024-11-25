@@ -1,0 +1,50 @@
+---
+import '@styles/highlights/sources.css';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getSources, getHighlightsWithQuery } from '@scripts/highlights/highlights-api-helper';
+import { toKebabCase } from '@utils/string';
+
+export const getStaticPaths = async () => {
+  const sources = await getSources().then(sources =>
+    sources.sort((a, b) => {
+      if (a.title.toUpperCase() < b.title.toUpperCase()) {
+        return -1;
+      } else {
+        return 1;
+      }
+    })
+  );
+
+  return sources.map(({ id, title }) => ({
+    params: { slug: toKebabCase(title) },
+    props: { id, title }
+  }));
+};
+
+const { id, title } = Astro.props;
+
+const sourceHighlights = await getHighlightsWithQuery(`source=${id}`);
+const author = sourceHighlights.at(0)?.author;
+---
+
+<BaseLayout title={`Highlights - ${title}`}>
+  <section aria-labelledby="source-title">
+    <p class="author">{author}</p>
+    <h1 id="source-title">{title}</h1>
+  </section>
+  <article>
+    {
+      sourceHighlights.map(({ body, metadata }, _i, arr) => {
+        return (
+          <figure>
+            <blockquote>{body}</blockquote>
+            <figcaption>
+              <cite>{metadata}</cite>
+            </figcaption>
+            {arr.length > 1 && <hr />}
+          </figure>
+        );
+      })
+    }
+  </article>
+</BaseLayout>

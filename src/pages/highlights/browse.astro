@@ -1,0 +1,34 @@
+---
+import '@styles/highlights/browse.css';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import LinkCard from '@components/LinkCard.astro';
+import Heading from '@components/Heading.astro';
+import { getHighlightsWithQuery, getSources } from '@scripts/highlights/highlights-api-helper';
+import { toKebabCase } from '@utils/string';
+
+const sources = await getSources().then(sources =>
+  sources.sort((a, b) => {
+    if (a.title.toUpperCase() < b.title.toUpperCase()) {
+      return -1;
+    } else {
+      return 1;
+    }
+  })
+);
+---
+
+<BaseLayout title={'Highlights - Browse'}>
+  <section>
+    <Heading text="Highlights by Source" />
+    <menu>
+      {
+        sources.map(async ({ id, title }) => {
+          // TODO: This can be removed if authorId is added to the the sources.
+          const highlights = await getHighlightsWithQuery(`source=${id}`);
+          const author = highlights.at(0)!.author;
+          return <LinkCard target={`/highlights/sources/${toKebabCase(title)}`} title={author} body={title} />;
+        })
+      }
+    </menu>
+  </section>
+</BaseLayout>

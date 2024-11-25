@@ -20,6 +20,7 @@ interface Tag {
 interface Highlight {
   author: string;
   body: string;
+  metadata: string;
   source: string;
   tags: string[];
 }

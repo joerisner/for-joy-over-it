@@ -1,12 +1,13 @@
 ---
 export interface Props {
   text: string;
+  textCenter?: boolean;
 }
 
-const { text } = Astro.props;
+const { text, textCenter = true } = Astro.props;
 ---
 
-<h2>{text}</h2>
+<h2 class:list={[{ 'text-center': textCenter }]}>{text}</h2>
 
 <style>
   h2 {
@@ -15,5 +16,9 @@ const { text } = Astro.props;
     font-weight: var(--font-weight-bolder);
     line-height: var(--line-height-medium);
     margin-top: 0.25rem;
+  }
+
+  .text-center {
+    text-align: center;
   }
 </style>

@@ -1,17 +1,23 @@
 ---
 export interface Props {
   date: Date;
+  textCenter?: boolean;
 }
 
-const { date } = Astro.props;
+const { date, textCenter = true } = Astro.props;
 ---
 
-<time datetime={date.toISOString()}>
+<time datetime={date.toISOString()} class:list={[{ 'text-center': textCenter }]}>
   {date.toLocaleDateString('en-us', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' })}
 </time>
 
 <style>
   time {
+    display: block;
     font-size: var(--font-size-small);
+  }
+
+  .text-center {
+    text-align: center;
   }
 </style>

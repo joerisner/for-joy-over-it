@@ -1,0 +1,45 @@
+---
+export interface Props {
+  title: string;
+  body: string;
+  target: string;
+  textCenter?: boolean;
+}
+
+const { title, body, target, textCenter = true } = Astro.props;
+---
+
+<a href={target} class:list={[{ 'text-center': textCenter }]}>
+  <small>{title}</small>
+  <h3>{body}</h3>
+</a>
+
+<style>
+  a {
+    background-color: var(--color-bg-secondary);
+    border-radius: 0.45rem;
+    overflow: hidden;
+    padding: 1rem;
+  }
+
+  a:hover {
+    background-color: var(--color-box-border);
+  }
+
+  h3,
+  small {
+    margin: 0;
+  }
+
+  h3 {
+    color: var(--color-txt-secondary);
+  }
+
+  small {
+    color: var(--color-txt-default);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+</style>
