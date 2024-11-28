@@ -5,8 +5,7 @@ test.describe('Navigation', () => {
     const navPanel = page.getByRole('navigation', { name: 'Main' });
     const navToggle = page.getByRole('button', { name: 'Nav Toggle' });
     const navItems = [
-      { title: 'Home', href: '/' },
-      { title: 'Blog', href: '/blog' },
+      { title: 'Blog', href: '/' },
       { title: 'Resources', href: '/resources' },
       { title: 'Highlights', href: '/highlights' }
     ];

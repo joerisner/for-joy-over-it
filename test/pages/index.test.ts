@@ -25,7 +25,7 @@ test.describe('Index Page', () => {
     expect(postContent).toHaveLength(303);
 
     await post.click();
-    await expect(page.getByRole('time')).toHaveText(postPublishDate);
-    await expect(page.getByRole('heading', { level: 1, name: postTitle })).toBeVisible();
+    await expect(page.getByRole('time')).toHaveText(postPublishDate as string);
+    await expect(page.getByRole('heading', { level: 1, name: postTitle as string })).toBeVisible();
   });
 });

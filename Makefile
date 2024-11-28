@@ -1,3 +1,13 @@
+.DEFAULT_GOAL=help
+
+check: ## Check the project for type and format errors
+	@npm run format
+	@npx astro sync && npx astro check
+
+clean: ## Remove temporary artifacts
+	@printf "\033[34;1mCleaning up the project...\033[0m\n"
+	bin/clean
+
 help: ## Show this help
 	@awk 'BEGIN {FS = ":.*##"; \
 	printf "\nUsage:\n\033[36m\033[0m"} /^[$$()% a-zA-Z_-]+:.*?##/ { \
@@ -22,6 +32,3 @@ test: ## Execute the test suite
 	@printf "\033[34;1mExecuting tests...\033[0m\n"
 	npx playwright test
 
-clean: ## Remove temporary artifacts
-	@printf "\033[34;1mCleaning up the project...\033[0m\n"
-	bin/clean
