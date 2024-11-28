@@ -1,0 +1,58 @@
+section {
+  text-align: center;
+}
+
+.author {
+  font-size: var(--font-size-medium);
+  margin: 0;
+}
+
+h1 {
+  color: var(--color-txt-secondary);
+  font-weight: var(--font-weight-bolder);
+  font-size: var(--font-size-xx-large);
+  line-height: var(--line-height-large);
+  margin: 0.5rem 0 3rem;
+}
+
+article,
+figure {
+  width: 100%;
+}
+
+figure {
+  margin: 0 0 3rem 0;
+  padding: 0;
+}
+
+figcaption {
+  margin: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem 0;
+  font-size: var(--font-size-large);
+  font-style: italic;
+}
+
+figcaption {
+  text-align: right;
+}
+
+cite {
+  font-style: normal;
+}
+
+hr {
+  border: 1px solid var(--color-box-border);
+  margin: 1.5rem auto;
+  filter: brightness(80%);
+  width: 85%;
+}
+
+@media (min-width: 768px) {
+  article {
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-medium);
+  }
+}

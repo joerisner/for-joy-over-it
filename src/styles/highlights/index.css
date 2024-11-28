@@ -13,100 +13,22 @@ section {
   padding: 0;
 }
 
+#browse-link {
+  background-color: var(--color-txt-secondary);
+  color: var(--color-bg-default);
+  font-size: var(--font-size-default);
+  margin: 0 auto;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--color-txt-secondary);
+  border-radius: 0.45rem;
+}
+
+#browse-link:hover {
+  filter: brightness(80%);
+}
+
 article {
   width: 100%;
-}
-
-dialog {
-  margin: 20% auto;
-  width: 80%;
-  max-width: 48rem;
-  background-color: var(--color-bg-secondary);
-  padding: 1rem;
-  border: 0;
-  border-radius: 0.5rem;
-
-  & header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  & h3 {
-    color: var(--color-txt-secondary);
-    font-size: var(--font-size-large);
-    font-weight: var(--font-weight-bolder);
-    line-height: var(--line-height-medium);
-    margin-top: 0;
-  }
-
-  & #close-modal-btn {
-    background-color: inherit;
-    background-image: url("/icons/nav-closed.svg");
-    border: 0;
-    height: 2rem;
-    outline: none;
-    padding: 0;
-    width: 2rem;
-  }
-
-  & form,
-  .form-field {
-    display: flex;
-    flex-direction: column;
-  }
-
-  & form {
-    gap: 1.5rem;
-  }
-
-  & label {
-    color: var(--color-txt-secondary);
-    margin-bottom: 0.5rem;
-  }
-
-  & menu {
-    display: flex;
-    gap: 1rem;
-    margin: 2rem 0 0 0;
-    padding: 0;
-    justify-content: right;
-
-    & button {
-      margin: 0;
-      padding: 0;
-    }
-
-    & button[type="reset"] {
-      border: 0;
-      color: var(--color-txt-default);
-      padding-left: 0.2rem;
-      padding-right: 0.2rem;
-    }
-  }
-
-  & select {
-    appearance: none;
-    background-color: var(--color-txt-secondary);
-    border: 0;
-    border-radius: 0.35rem;
-    color: var(--color-bg-secondary);
-    cursor: pointer;
-    font-size: var(--font-size-default);
-    padding: 0.25rem 0.75rem;
-    width: 90%;
-  }
-
-  & select:disabled {
-    opacity: 0.6;
-  }
-
-  & select:hover:disabled {
-    cursor: not-allowed;
-  }
-}
-
-dialog::backdrop {
-  backdrop-filter: brightness(80%) blur(3px);
 }
 
 figure,
@@ -131,18 +53,4 @@ figcaption {
 
 cite {
   font-style: normal;
-}
-
-@media (min-width: 768px) {
-  dialog {
-    margin: 10% auto;
-
-    & select {
-      max-width: 70%;
-    }
-
-    & menu {
-      margin: 4rem 0 0 0;
-    }
-  }
 }

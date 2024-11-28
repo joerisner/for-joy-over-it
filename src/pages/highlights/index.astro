@@ -2,84 +2,14 @@
 import '@styles/highlights/index.css';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Button from '@components/Button.astro';
-import { getAuthors, getSources, getTags } from '@scripts/highlights/highlights-api-helper';
-
-const authors = await getAuthors().then(authors =>
-  authors.sort((a, b) => {
-    if (a.firstName.toUpperCase() < b.firstName.toUpperCase()) {
-      return -1;
-    } else {
-      return 1;
-    }
-  })
-);
-
-const sources = await getSources().then(sources =>
-  sources.sort((a, b) => {
-    if (a.title.toUpperCase() < b.title.toUpperCase()) {
-      return -1;
-    } else {
-      return 1;
-    }
-  })
-);
-
-const tags = await getTags().then(tags =>
-  tags.sort((a, b) => {
-    if (a.name.toUpperCase() < b.name.toUpperCase()) {
-      return -1;
-    } else {
-      return 1;
-    }
-  })
-);
 ---
 
 <BaseLayout title={'Highlights'}>
   <section>
     <menu class="search-button-menu">
       <Button text="Enlighten me, Boon" id="random-highlight-btn" />
-      <Button text="Search" id="search-btn" isCta={true} />
+      <a href="/highlights/browse" id="browse-link">Browse</a>
     </menu>
-    <dialog>
-      <header>
-        <h3>Search for highlights</h3>
-        <button id="close-modal-btn"></button>
-      </header>
-      <form>
-        <div class="form-field">
-          <label for="authors">Author</label>
-          <div>
-            <select id="authors" name="author">
-              <option value="" selected disabled hidden>Select...</option>
-              {authors.map(({ id, firstName, lastName }) => <option value={id}>{`${firstName} ${lastName}`}</option>)}
-            </select>
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="sources">Source</label>
-          <div>
-            <select id="sources" name="source">
-              <option value="" selected disabled hidden>Select...</option>
-              {sources.map(({ id, title }) => <option value={id}>{title}</option>)}
-            </select>
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="tags">Tag</label>
-          <div>
-            <select id="tags" name="tag">
-              <option value="" selected disabled hidden>Select...</option>
-              {tags.map(({ id, name }) => <option value={id}>{name}</option>)}
-            </select>
-          </div>
-        </div>
-        <menu>
-          <Button text="Reset" type="reset" />
-          <Button text="Submit" type="submit" value="submit" isCta={true} />
-        </menu>
-      </form>
-    </dialog>
     <article></article>
   </section>
 </BaseLayout>

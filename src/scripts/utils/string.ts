@@ -1,4 +1,4 @@
-export const kebabCase = (str: string) =>
+export const toKebabCase = (str: string) =>
   str
     .toLowerCase()
     .replaceAll(/[^a-zA-Z ]/g, '')
@@ -10,3 +10,9 @@ export const truncate = (str: string, length: number) => {
 };
 
 export const isEmpty = (str: string) => str.trim().length === 0;
+
+export const toTitleCase = (str: string) => {
+  return str
+    .replace(/[_-]/g, ' ')
+    .replace(/\w\S*/g, word => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase());
+};
