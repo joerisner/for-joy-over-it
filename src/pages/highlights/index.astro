@@ -1,5 +1,4 @@
 ---
-import '@styles/highlights/index.css';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Button from '@components/Button.astro';
 ---
@@ -8,10 +7,89 @@ import Button from '@components/Button.astro';
   <section>
     <menu class="search-button-menu">
       <Button text="Enlighten me, Boon" id="random-highlight-btn" />
-      <a href="/highlights/browse" id="browse-link">Browse</a>
+      <a href="/highlights/browse" id="browse-link" role="button">Browse</a>
     </menu>
-    <article></article>
+    <figure>
+      <blockquote></blockquote>
+      <figcaption>
+        <p id="author"></p>
+        <cite></cite>
+      </figcaption>
+    </figure>
   </section>
 </BaseLayout>
 
-<script src="@scripts/highlights/index.ts"></script>
+<style>
+  section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .search-button-menu {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  #browse-link {
+    background-color: var(--color-txt-secondary);
+    color: var(--color-bg-default);
+    font-size: var(--font-size-default);
+    margin: 0 auto;
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--color-txt-secondary);
+    border-radius: 0.45rem;
+  }
+
+  #browse-link:hover {
+    filter: brightness(80%);
+  }
+
+  article {
+    width: 100%;
+  }
+
+  figure,
+  figcaption,
+  p {
+    margin: 0;
+  }
+
+  figure {
+    width: 100%;
+  }
+
+  blockquote {
+    margin: 0 0 1.5rem 0;
+    font-size: var(--font-size-large);
+    font-style: italic;
+  }
+
+  figcaption {
+    text-align: right;
+  }
+
+  cite {
+    font-style: normal;
+  }
+</style>
+
+<script>
+  import { getRandomHighlight } from '@scripts/highlights/highlights-api-helper';
+
+  const insertRandomHighlight = async () => {
+    const { author, body, source } = await getRandomHighlight();
+
+    document.querySelector('blockquote')!.textContent = body;
+    document.getElementById('author')!.textContent = author;
+    document.querySelector('cite')!.textContent = source;
+  };
+
+  const randomHighlightButton = document.getElementById('random-highlight-btn') as HTMLButtonElement;
+  window.addEventListener('load', insertRandomHighlight);
+  randomHighlightButton.addEventListener('click', insertRandomHighlight);
+</script>
