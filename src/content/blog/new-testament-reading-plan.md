@@ -22,7 +22,7 @@ The only other factor in deciding the book order was that I tried to rotate betw
 
 ## The plan
 
-Here is the plan I'll be following year-to-year going forward.
+Here is the plan I'll be following year-to-year going forward. The plan is also available as a PDF [here](/files/nt-reading-plan.pdf).
 
 - **Week 1**: Romans 1-5
 - **Week 2**: Romans 6-10
