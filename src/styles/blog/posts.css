@@ -15,6 +15,11 @@ section {
   h3 {
     color: var(--color-txt-secondary);
   }
+
+  & a {
+    border-bottom: 1px solid var(--color-txt-secondary);
+    color: var(--color-txt-secondary);
+  }
 }
 
 @media (min-width: 768px) {
