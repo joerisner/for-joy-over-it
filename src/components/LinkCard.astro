@@ -1,17 +1,17 @@
 ---
 export interface Props {
+  heading: string;
   title: string;
-  body: string;
   target: string;
   textCenter?: boolean;
 }
 
-const { title, body, target, textCenter = true } = Astro.props;
+const { heading, title, target, textCenter = true } = Astro.props;
 ---
 
-<a href={target} class:list={[{ 'text-center': textCenter }]}>
-  <small>{title}</small>
-  <h3>{body}</h3>
+<a href={target} class:list={[{ 'text-center': textCenter }]} aria-label={`Link to source: ${title}`}>
+  <small>{heading}</small>
+  <h3>{title}</h3>
 </a>
 
 <style>

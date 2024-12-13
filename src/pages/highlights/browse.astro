@@ -19,13 +19,13 @@ const sources = await getSources().then(sources =>
 <BaseLayout title={'Highlights - Browse'}>
   <section>
     <Heading text="Highlights by Source" />
-    <menu>
+    <menu aria-label="List of Sources">
       {
         sources.map(async ({ id, title }) => {
           // TODO: This can be removed if authorId is added to the the sources.
           const highlights = await getHighlightsWithQuery(`source=${id}`);
           const author = highlights.at(0)!.author;
-          return <LinkCard target={`/highlights/sources/${toKebabCase(title)}`} title={author} body={title} />;
+          return <LinkCard target={`/highlights/sources/${toKebabCase(title)}`} heading={author} title={title} />;
         })
       }
     </menu>
