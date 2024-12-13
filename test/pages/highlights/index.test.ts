@@ -1,10 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-// TODO: Unskip this.
-test.describe.skip('Highlights', () => {
+test.describe('Highlights', () => {
   test('renders random highlight', async ({ page }) => {
     const authorName = page.locator('#author');
-    const sourceTitle = page.locator('#source');
+    const sourceTitle = page.locator('cite');
     const quoteText = page.getByRole('blockquote');
 
     await page.route('**/random', async route => {

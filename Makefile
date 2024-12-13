@@ -8,6 +8,10 @@ clean: ## Remove temporary artifacts
 	@printf "\033[34;1mCleaning up the project...\033[0m\n"
 	bin/clean
 
+dev: setup ## Start the development server
+	@printf "\033[34;1mStarting the dev server...\033[0m\n"
+	npx astro dev
+
 help: ## Show this help
 	@awk 'BEGIN {FS = ":.*##"; \
 	printf "\nUsage:\n\033[36m\033[0m"} /^[$$()% a-zA-Z_-]+:.*?##/ { \
@@ -17,12 +21,8 @@ help: ## Show this help
 setup: ## Install and setup dependencies
 	@printf "\033[34;1mInstalling dependencies...\033[0m\n"
 	npm install
-	@printf "\033[34;1mStarting highlights-api dependency...\033[0m\n"
-	@docker compose up -d
-	
-start: setup ## Start the development server
-	@printf "\033[34;1mStarting the dev server...\033[0m\n"
-	npx astro dev
+	@printf "\033[34;1mStarting highlights-api dependency in a container...\033[0m\n"
+	@open -a Docker && while (! docker stats --no-stream &> /dev/null ); do sleep 1; done && docker compose up -d
 
 stop: ## Stop running all dependencies
 	@docker compose down
@@ -31,4 +31,3 @@ stop: ## Stop running all dependencies
 test: ## Execute the test suite
 	@printf "\033[34;1mExecuting tests...\033[0m\n"
 	npx playwright test
-
