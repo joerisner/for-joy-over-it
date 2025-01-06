@@ -15,6 +15,7 @@ test.describe('Navigation', () => {
 
     await navToggle.click();
     await expect(navPanel).toHaveAttribute('data-visible', 'true');
+    expect(await navPanel.getByRole('link').all()).toHaveLength(navItems.length);
 
     for (const navItem of navItems) {
       await expect(navPanel.getByRole('link', { name: navItem.title })).toHaveAttribute('href', navItem.href);

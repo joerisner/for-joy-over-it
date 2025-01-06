@@ -28,4 +28,9 @@ test.describe('Highlights', () => {
     await expect(sourceTitle).toHaveText('Macho Man');
     await expect(quoteText).toHaveText('Ooh, yeah!');
   });
+
+  test('includes link to page for browsing highlights', async ({ page }) => {
+    await page.goto('/highlights');
+    await expect(page.getByRole('button', { name: 'Browse' })).toHaveAttribute('href', '/highlights/browse');
+  });
 });

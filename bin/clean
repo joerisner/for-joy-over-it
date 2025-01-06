@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-DIRS=(./.astro ./dist ./test/artifacts ./test/report)
+DIRS=(./.astro ./dist ./test/browser/artifacts ./test/browser/report)
 
 for DIR in "${DIRS[@]}"; do
   if [[ -d $DIR ]]; then
     rm -rf "$DIR"
-    printf "Removed directory: \033[31;1m$DIR\033[0m\n"
+    printf "Removed directory: \033[31;1m%s\033[0m\n" "$DIR"
   fi
 done

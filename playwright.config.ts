@@ -6,7 +6,7 @@ export default defineConfig({
   },
   forbidOnly: !!process.env.CI,
   fullyParallel: true,
-  outputDir: './test/artifacts',
+  outputDir: './test/browser/artifacts',
   projects: [
     {
       name: 'chromium',
@@ -17,9 +17,9 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] }
     }
   ],
-  reporter: [['dot'], ['html', { open: 'never', outputFolder: './test/report' }]],
+  reporter: [['dot'], ['html', { open: 'never', outputFolder: './test/browser/report' }]],
   retries: process.env.CI ? 2 : 0,
-  testDir: 'test',
+  testDir: './test/browser',
   timeout: 20 * 1000,
   use: {
     actionTimeout: 0,
