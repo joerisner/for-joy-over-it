@@ -15,5 +15,6 @@ make dev
 Run tests.
 
 ```sh
+make setup
 make test
 ```

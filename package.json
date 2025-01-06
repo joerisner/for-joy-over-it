@@ -6,8 +6,10 @@
   "scripts": {
     "format": "prettier --check \"./**/*.{astro,css,js,json,ts,yml}\"",
     "preview": "astro build && npx astro preview",
-    "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report"
+    "playwright": "playwright test",
+    "playwright:ui": "playwright test --ui",
+    "playwright:report": "playwright show-report",
+    "vitest": "vitest"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
@@ -16,6 +18,8 @@
     "astro": "^5.1.1",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^5.7.2"
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   }
 }

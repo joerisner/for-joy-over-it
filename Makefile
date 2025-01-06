@@ -30,4 +30,5 @@ stop: ## Stop running all dependencies
 .PHONY: test
 test: ## Execute the test suite
 	@printf "\033[34;1mExecuting tests...\033[0m\n"
-	npx playwright test
+	npm run vitest
+	npm run playwright

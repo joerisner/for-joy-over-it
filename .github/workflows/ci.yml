@@ -57,13 +57,27 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: run tests
-        run: make test
+        run: npm run playwright
       - uses: actions/upload-artifact@v4
         if: ${{ failure() }}
         with:
           name: test-artifacts
           path: |
-            test/artifacts/
-            !test/artifacts/.last-run.json
-            test/report/
+            test/browser/artifacts/
+            !test/browser/artifacts/.last-run.json
+            test/browser/report/
           retention-days: 1
+
+  vitest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: run tests
+        run: npm run vitest

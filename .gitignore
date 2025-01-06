@@ -6,8 +6,8 @@ dist/
 node_modules/
 
 # Playwright
-test/artifacts/
-test/report/
+test/browser/artifacts/
+test/browser/report/
 
 # Env vars
 .env*
