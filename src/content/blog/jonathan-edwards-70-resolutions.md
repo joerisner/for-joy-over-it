@@ -86,7 +86,7 @@ Remember to read over these Resolutions once a week.
 
 37. Resolved, to inquire every night, as I am going to bed, wherein I have been negligent, what sin I have committed, and wherein I have denied myself: also at the end of every week, month and year. _Dec. 22 and 26, 1722_.
 
-38. Resolved, never to speak anything that is ridiculous, sportive, or matter of laughter on the Lord’s day. Sabbath evening, _Dec. 23, 1722_.
+38. Resolved, never to speak anything that is ridiculous, sportive, or matter of laughter on the Lord’s day. _Sabbath evening, Dec. 23, 1722_.
 
 39. Resolved, never to do anything that I so much question the lawfulness of, as that I intend, at the same time, to consider and examine afterwards, whether it be lawful or no; except I as much question the lawfulness of the omission.
 
@@ -104,7 +104,7 @@ Remember to read over these Resolutions once a week.
 
 46. Resolved, never to allow the least measure of any fretting uneasiness at my father or mother. Resolved to suffer no effects of it, so much as in the least alteration of speech, or motion of my eve: and to be especially careful of it, with respect to any of our family.
 
-47. Resolved, to endeavor to my utmost to deny whatever is not most agreeable to a good, and universally sweet and benevolent, quiet, peaceable, contented, easy, compassionate, generous, humble, meek, modest, submissive, obliging, diligent and industrious, charitable, even, patient, moderate, forgiving, sincere temper; and to do at all times what such a temper would lead me to. Examine strictly every week, whether I have done so. Sabbath morning. _May 5, 1723_.
+47. Resolved, to endeavor to my utmost to deny whatever is not most agreeable to a good, and universally sweet and benevolent, quiet, peaceable, contented, easy, compassionate, generous, humble, meek, modest, submissive, obliging, diligent and industrious, charitable, even, patient, moderate, forgiving, sincere temper; and to do at all times what such a temper would lead me to. Examine strictly every week, whether I have done so. _Sabbath morning. May 5, 1723_.
 
 48. Resolved, constantly, with the utmost niceness and diligence, and the strictest scrutiny, to be looking into the state of my soul, that I may know whether I have truly an interest in Christ or no; that when I come to die, I may not have any negligence respecting this to repent of. _May 26, 1723_.
 
