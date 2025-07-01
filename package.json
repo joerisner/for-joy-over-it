@@ -16,7 +16,7 @@
     "@astrojs/sitemap": "^3.4.0",
     "@playwright/test": "^1.53.2",
     "astro": "^5.8.1",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3",
