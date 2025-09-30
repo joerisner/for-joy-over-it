@@ -15,12 +15,10 @@ interface Highlight {
 }
 
 export const getSources = async (): Promise<Array<Source>> =>
-  await fetch(`${PUBLIC_HIGHLIGHTS_API_URL}/sources`)
-    .then(res => res.json())
-    .then(json => json.sources);
+  await fetch(`${PUBLIC_HIGHLIGHTS_API_URL}/sources`).then(res => res.json());
 
 export const getRandomHighlight = async (): Promise<Highlight> =>
-  await fetch(`${PUBLIC_HIGHLIGHTS_API_URL}/random`).then(res => res.json());
+  await fetch(`${PUBLIC_HIGHLIGHTS_API_URL}/highlights/random`).then(res => res.json());
 
 export const getHighlightsWithQuery = async (queryStr: string): Promise<Array<Highlight>> =>
   await fetch(`${PUBLIC_HIGHLIGHTS_API_URL}/highlights?${queryStr}`).then(res => res.json());

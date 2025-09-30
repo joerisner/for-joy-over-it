@@ -13,13 +13,13 @@ describe('Highlights API Helper', () => {
   beforeEach(() => vi.clearAllMocks());
 
   test('getSources()', async () => {
-    const mockResponse = { sources: [{ id: 1, title: 'Foo', type: 'BOOK' }] };
+    const mockResponse = [{ id: 1, title: 'Foo', type: 'BOOK' }];
     mockFetchResponse(mockResponse);
 
     const response = await getSources();
 
     expect(fetch).toHaveBeenCalledTimes(1);
-    expect(response).toEqual(mockResponse.sources);
+    expect(response).toEqual(mockResponse);
   });
 
   test('getRandomHighlight()', async () => {
