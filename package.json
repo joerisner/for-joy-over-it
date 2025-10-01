@@ -14,7 +14,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/sitemap": "^3.4.2",
-    "@playwright/test": "^1.54.2",
+    "@playwright/test": "^1.55.1",
     "astro": "^5.12.8",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
