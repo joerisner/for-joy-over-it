@@ -22,7 +22,7 @@ help: ## Show this help
 setup: ## Install and setup dependencies
 	@printf "\033[34;1mInstalling dependencies...\033[0m\n"
 	npm install
-	@printf "\033[34;1mStarting highlights-api dependency in a container...\033[0m\n"
+	@printf "\033[34;1mStarting highlights dependency in a container...\033[0m\n"
 	@open -a Docker && while (! docker stats --no-stream &> /dev/null ); do sleep 1; done && docker compose up -d
 
 stop: ## Stop running all dependencies

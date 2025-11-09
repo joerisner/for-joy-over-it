@@ -1,6 +1,6 @@
 services:
   highlights-api:
-    image: jrisner/highlights-api
-    container_name: highlights-api
+    image: jrisner/highlights
+    container_name: highlights
     ports:
       - 3000:3000
