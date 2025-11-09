@@ -58,7 +58,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: run tests
         run: npm run playwright
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: ${{ failure() }}
         with:
           name: test-artifacts
