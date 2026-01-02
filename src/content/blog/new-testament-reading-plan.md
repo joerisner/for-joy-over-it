@@ -24,55 +24,55 @@ The only other factor in deciding the book order was that I tried to rotate betw
 
 Here is the plan I'll be following year-to-year going forward. The plan is also available as a PDF [here](/files/nt-reading-plan.pdf).
 
-- **Week 1**: Romans 1-5
-- **Week 2**: Romans 6-10
-- **Week 3**: Romans 11-15
-- **Week 4**: Romans 16, 1 Peter 1-4
-- **Week 5**: 1 Peter 5, Revelation 1-4
-- **Week 6**: Revelation 5-9
-- **Week 7**: Revelation 10-14
-- **Week 8**: Revelation 15-19
-- **Week 9**: Revelation 20-22, Galatians 1 & 2
-- **Week 10**: Galatians 3-6, Matthew 1
-- **Week 11**: Matthew 2-6
-- **Week 12**: Matthew 7-11
-- **Week 13**: Matthew 12-16
-- **Week 14**: Matthew 17-21
-- **Week 15**: Matthew 22-26
-- **Week 16**: Matthew 27 & 28, Colossians 1-3
-- **Week 17**: Colossians 4, Hebrews 1-4
-- **Week 18**: Hebrews 5-9
-- **Week 19**: Hebrews 10-13, Jude
-- **Week 20**: 1 Thessalonians 1-5
-- **Week 21**: 2 Thessalonians 1-3, Acts 1 & 2
-- **Week 22**: Acts 3-7
-- **Week 23**: Acts 8-12
-- **Week 24**: Acts 13-17
-- **Week 25**: Acts 18-22
-- **Week 26**: Acts 23-27
-- **Week 27**: Acts 28, Mark 1-4
-- **Week 28**: Mark 5-9
-- **Week 29**: Mark 10-14
-- **Week 30**: Mark 15 & 16, 1 Corinthians 1-3
-- **Week 31**: 1 Corinthians 4-8
-- **Week 32**: 1 Corinthians 9-13
-- **Week 33**: 1 Corinthians 14-16, Ephesians 1-3
-- **Week 34**: Ephesians 4-6, 1 John 1 & 2
-- **Week 35**: 1 John 3-5, James 1 & 2
-- **Week 36**: James 3-5, Titus 1 & 2
-- **Week 37**: Titus 3, Philemon, 2 Peter 1-3
-- **Week 38**: Luke 1-5
-- **Week 39**: Luke 6-10
-- **Week 40**: Luke 11-15
-- **Week 41**: Luke 16-20
-- **Week 42**: Luke 21-24, 2 John
-- **Week 43**: 3 John, 2 Corinthians 1-4
-- **Week 44**: 2 Corinthians 5-9
-- **Week 45**: 2 Corinthians 10-13, Philippians 1
-- **Week 46**: Philippians 2-4, 1 Timothy 1 & 2
-- **Week 47**: 1 Timothy 3-6, 2 Timothy 1
-- **Week 48**: 2 Timothy 2-4, John 1 & 2
-- **Week 49**: John 3-7
-- **Week 50**: John 8-12
-- **Week 51**: John 13-17
-- **Week 52**: John 18-21
+- **Jan. 1-7:** Romans 1-5
+- **Jan. 8-14:** Romans 6-10
+- **Jan. 15-21:** Romans 11-15
+- **Jan. 22-28:** Romans 16, 1 Peter 1-4
+- **Jan. 29-Feb. 4:** 1 Peter 5, Revelation 1-4
+- **Feb. 5-11:** Revelation 5-9
+- **Feb. 12:18:** Revelation 10-14
+- **Feb. 19-25:** Revelation 15-19
+- **Feb. 26-Mar. 4:** Revelation 20-22, Galatians 1-2
+-  **Mar. 5-11:** Galatians 3-6, Matthew 1
+-  **Mar 12-18:** Matthew 2-6
+-  **Mar. 19-25:** Matthew 7-11
+-  **Mar. 26-Apr. 1:** Matthew 12-16
+-  **Apr. 2-8:** Matthew 17-21
+-  **Apr. 9-15:** Matthew 22-26
+-  **Apr. 16-22:** Matthew 27-28, Colossians 1-3
+-  **Apr. 23-29:** Colossians 4, Hebrews 1-4
+-  **Apr. 30-May 6:** Hebrews 5-9
+-  **May 7-13:** Hebrews 10-13, Jude
+-  **May 14-20:** 1 Thessalonians 1-5
+-  **May 21-27:** 2 Thessalonians 1-3, Acts 1-2
+-  **May 28-Jun. 3:** Acts 3-7
+-  **Jun. 4-10:** Acts 8-12
+-  **Jun. 11-17:** Acts 13-17
+-  **Jun. 18-24:** Acts 18-22
+-  **Jun. 25-Jul. 1:** Acts 23-27
+-  **Jul. 2-8:** Acts 28, Mark 1-4
+-  **Jul. 9-15:** Mark 5-9
+-  **Jul. 16-22:** Mark 10-14
+-  **Jul. 23-29:** Mark 15-16, 1 Corinthians 1-3
+-  **Jul. 30-Aug. 5:** 1 Corinthians 4-8
+-  **Aug. 6-12:** 1 Corinthians 9-13
+-  **Aug. 13-19:** 1 Corinthians 14-16, Ephesians 1-3
+-  **Aug: 20-26:** Ephesians 4-6, 1 John 1-2
+-  **Aug. 27-Sep. 2:** 1 John 3-5, James 1-2
+-  **Sep. 3-9:** James 3-5, Titus 1-2
+-  **Sep. 10-16:** Titus 3, Philemon, 2 Peter 1-3
+-  **Sep. 17-23:** Luke 1-5
+-  **Sep. 24-30:** Luke 6-10
+-  **Oct. 1-7:** Luke 11-15
+-  **Oct. 8-14:** Luke 16-20
+-  **Oct. 15-21:** Luke 21-24, 2 John
+-  **Oct. 22-28:** 3 John, 2 Corinthians 1-4
+-  **Oct. 29-Nov. 4:** 2 Corinthians 5-9
+-  **Nov. 5-11:** 2 Corinthians 10-13, Philippians 1
+-  **Nov. 12-18:** Philippians 2-4, 1 Timothy 1-2
+-  **Nov. 19-25:** 1 Timothy 3-6, 2 Timothy 1
+-  **Nov. 26-Dec. 2:** 2 Timothy 2-4, John 1-2
+-  **Dec. 3-9:** John 3-7
+-  **Dec. 10-16:** John 8-12
+-  **Dec. 17-23:** John 13-17
+-  **Dec. 24-31:** John 18-21
