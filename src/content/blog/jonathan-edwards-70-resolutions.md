@@ -4,7 +4,7 @@ publishDate: '2025-05-03'
 isDraft: false
 ---
 
-As a young man, Jonathan Edwards took decisive action in his pursuit of God and resolved, at the early age of nineteen, to live with intention towards the things of God and eternity. This man - his affection for and devotion to God and His kingdom - has been incredibly inspiring to me. Captured here are Edwards' 70 resolutions that he used to guide his life and pursuit of the Holy.
+As a young man, Jonathan Edwards took decisive action in his pursuit of God and resolved, at the early age of nineteen, to live with intention towards the things of God and eternity. This man—his affection for and devotion to God and His kingdom—has been incredibly inspiring to me. Captured here are Edwards' 70 resolutions that he used to guide his life and pursuit of the Holy.
 
 ## Resolutions
 
