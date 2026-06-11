@@ -20,7 +20,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.5",
+    "vitest": "^4.1.8",
     "vite-tsconfig-paths": "^6.1.1"
   }
 }
