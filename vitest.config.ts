@@ -1,9 +1,10 @@
-/// <reference types="vitest/config" />
 import { defineConfig } from 'vitest/config';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [tsconfigPaths()],
+  resolve: {
+    // Resolves the path aliases declared in tsconfig.json.
+    tsconfigPaths: true
+  },
   test: {
     include: ['test/**/*.test.ts'],
     exclude: ['test/browser/**/*'],

@@ -2,8 +2,8 @@
 .PHONY: check clean dev help setup stop test
 
 check: ## Check the project for type and format errors
-	@npm run format
-	@npx astro sync && npx astro check
+	@pnpm format
+	@pnpm typecheck
 
 clean: ## Remove temporary artifacts
 	@printf "\033[34;1mCleaning up the project...\033[0m\n"
@@ -11,7 +11,7 @@ clean: ## Remove temporary artifacts
 
 dev: setup ## Start the development server
 	@printf "\033[34;1mStarting the dev server...\033[0m\n"
-	npx astro dev
+	@pnpm dev
 
 help: ## Show this help
 	@awk 'BEGIN {FS = ":.*##"; \
@@ -21,7 +21,7 @@ help: ## Show this help
 
 setup: ## Install and setup dependencies
 	@printf "\033[34;1mInstalling dependencies...\033[0m\n"
-	npm install
+	pnpm install
 	@printf "\033[34;1mStarting highlights dependency in a container...\033[0m\n"
 	@open -a Docker && while (! docker stats --no-stream &> /dev/null ); do sleep 1; done && docker compose up -d
 
@@ -30,5 +30,5 @@ stop: ## Stop running all dependencies
 
 test: ## Execute the test suite
 	@printf "\033[34;1mExecuting tests...\033[0m\n"
-	npm run vitest
-	npm run playwright
+	pnpm vitest
+	pnpm playwright

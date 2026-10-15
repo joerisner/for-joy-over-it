@@ -7,30 +7,30 @@ permissions:
   contents: read
 
 jobs:
-  npm-audit:
+  pnpm-audit:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v6
-      - name: setup node
-        uses: actions/setup-node@v6
+        uses: actions/checkout@v7
+      - name: setup node with pnpm
+        uses: pnpm/setup@v3
         with:
+          install: false
           node-version-file: .nvmrc
-          cache: npm
-      - name: npm audit
-        run: npm audit --audit-level=high
+          cache: true
+      - name: pnpm audit
+        run: pnpm audit --audit-level=high
 
   check-format:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v6
-      - name: setup node
-        uses: actions/setup-node@v6
+        uses: actions/checkout@v7
+      - name: setup node with pnpm
+        uses: pnpm/setup@v3
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
+          cache: true
       - name: check format and types
         run: make check
 
@@ -41,15 +41,14 @@ jobs:
       PUBLIC_HIGHLIGHTS_API_URL: ${{ vars.PUBLIC_HIGHLIGHTS_API_URL }}
     steps:
       - name: checkout
-        uses: actions/checkout@v6
-      - name: setup node
-        uses: actions/setup-node@v6
+        uses: actions/checkout@v7
+      - name: setup node with pnpm
+        uses: pnpm/setup@v3
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
+          cache: true
       - name: install browsers
-        run: npx playwright install --with-deps
+        run: pnpx playwright install --with-deps
       # Required to build the project for Playwright tests
       - name: log in to docker hub
         uses: docker/login-action@v4
@@ -57,7 +56,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: run tests
-        run: npm run playwright
+        run: pnpm playwright
       - uses: actions/upload-artifact@v7
         if: ${{ failure() }}
         with:
@@ -72,12 +71,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v6
-      - name: setup node
-        uses: actions/setup-node@v6
+        uses: actions/checkout@v7
+      - name: setup node with pnpm
+        uses: pnpm/setup@v3
         with:
           node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
+          cache: true
       - name: run tests
-        run: npm run vitest
+        run: pnpm vitest
