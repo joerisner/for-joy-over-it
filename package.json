@@ -4,23 +4,31 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
+    "dev": "astro dev",
     "format": "prettier --check \"./**/*.{astro,css,js,json,ts,yml}\"",
-    "preview": "astro build && npx astro preview",
+    "preview": "astro build && astro preview",
     "playwright": "playwright test",
     "playwright:ui": "playwright test --ui",
     "playwright:report": "playwright show-report",
+    "typecheck": "astro sync && astro check",
     "vitest": "vitest"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/sitemap": "^3.7.2",
     "@playwright/test": "^1.59.1",
-    "astro": "^6.2.1",
+    "astro": "^7.3.8",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.5",
-    "vite-tsconfig-paths": "^6.1.1"
+    "vitest": "^5.0.4"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=12.0.0",
+      "onFail": "download"
+    }
   }
 }
