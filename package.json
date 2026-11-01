@@ -14,7 +14,7 @@
     "vitest": "vitest"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.12",
     "@astrojs/sitemap": "^3.7.2",
     "@playwright/test": "^1.59.1",
     "astro": "^7.3.8",
