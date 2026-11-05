@@ -14,15 +14,15 @@
     "vitest": "vitest"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.12",
     "@astrojs/sitemap": "^3.7.2",
     "@playwright/test": "^1.59.1",
-    "astro": "^7.3.8",
+    "astro": "^7.4.5",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",
-    "vitest": "^5.0.4"
+    "vitest": "^5.1.0"
   },
   "devEngines": {
     "packageManager": {
